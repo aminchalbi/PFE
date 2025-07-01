@@ -1,0 +1,49 @@
+services:
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: 9hiwa
+
+  backend:
+    build:
+      context: ./khiwabackend  # Modifié pour pointer directement vers le dossier backend
+      dockerfile: Dockerfile  # Le Dockerfile est maintenant dans le contexte ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/9hiwa
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+  admin:
+    build: 
+      context: ./khiwaweb
+      dockerfile: Dockerfile
+    container_name: admin-frontend
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
+
+  gerant:
+    build: 
+      context: ./khiwagerant
+      dockerfile: Dockerfile
+    container_name: gerant-frontend
+    ports:
+      - "3002:80"
+    depends_on:
+      - backend
+
+ 
+
+
+volumes:
+  mongodb_data:

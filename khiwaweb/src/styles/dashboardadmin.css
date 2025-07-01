@@ -1,0 +1,430 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #dbd5a3;
+    color: rgb(161, 26, 26);
+    padding: 20px;
+  }
+  
+  .sidebar-link {
+    display: block;
+    color: rgb(8, 7, 7);
+    padding: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #5687b8;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+ 
+  
+ 
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .card h3 {
+    margin-top: 0;
+  }
+  
+  input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  .active {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .inactive {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .edit-button {
+    background-color: #f39c12;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .edit-button:hover {
+    background-color: #e67e22;
+  }
+  
+  .role-select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .role-select:hover {
+    border-color: #3498db;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .stats p {
+    margin: 0;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .chart-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar h1 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #007acc;
+  }
+  
+  .navbar h1 img {
+    height: 70px;
+    width: 150px;
+    margin-right: 10px;
+  }
+  
+  .logout-button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    width: 100px;
+  }
+  
+  .logout-button:hover {
+    background-color: #005f99;
+  }
+  
+
+
+
+
+/* Styles pour le modal d'image */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 120%;
+  max-height: 120%;
+  cursor: default;
+}
+
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border: 3px solid white;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: #3498db;
+}
+
+/* Animation pour le modal */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.image-modal {
+  animation: modalFadeIn 0.3s ease-out;
+}
+  /* Styles images */
+.image-preview-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.salon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.image-count-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 2px 5px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+/* Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.image-modal-content img {
+  max-height: 80vh;
+  max-width: 90vw;
+  object-fit: contain;
+}
+.confirmation-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Pour s'assurer que la boîte apparaît au-dessus des autres éléments */
+}
+
+.confirmation-dialog-content {
+  background-color: #fff; /* Fond blanc */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center; /* Centrer le texte */
+}
+
+.confirmation-dialog h3 {
+  margin-bottom: 15px; /* Espace sous le titre */
+}
+
+.confirmation-dialog button {
+  margin: 5px; /* Espace entre les boutons */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-dialog .confirm {
+  background-color: #ff4d4d; /* Couleur rouge pour le bouton de confirmation */
+  color: white;
+}
+
+.confirmation-dialog .cancel {
+  background-color: #ccc; /* Couleur grise pour le bouton d'annulation */
+  color: black;
+}
+
+
+
+/* Styles pour les messages de notification */
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: white;
+  background-color: #4CAF50;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
+}
+
+.message.error {
+  background-color: #f44336;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
+
+/* Styles pour la carte */
+.mini-map-container {
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.toggle-map-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.toggle-map-button:hover {
+  background-color: #45a049;
+}
+
+.leaflet-container {
+  height: 300px;
+  width: 100%;
+}
+
+/* Style pour le marqueur */
+.leaflet-marker-icon {
+  background-size: contain;
+}
+.map-picker {
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  height: 300px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.address-input-container {
+  margin-bottom: 15px;
+}
+
+.address-input-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

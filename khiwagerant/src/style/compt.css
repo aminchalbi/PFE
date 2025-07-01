@@ -1,0 +1,121 @@
+/* src/style/ComptoiristeDashboard.css */
+
+.comptoiriste-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+    cursor: pointer;
+  }
+  
+  .sidebar ul li:hover {
+    text-decoration: underline;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: white;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  .orders-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .order-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .status-badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .status-badge.pending {
+    background-color: #ffcc00;
+    color: #000;
+  }
+  
+  .status-badge.preparing {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .status-badge.ready {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .status-badge.delivered {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .order-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-details ul li {
+    margin: 5px 0;
+  }
+  
+  .order-actions select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 15px;
+  }
+  
+  .loading {
+    text-align: center;
+    margin-top: 50px;
+  }

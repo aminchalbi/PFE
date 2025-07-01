@@ -1,0 +1,50 @@
+/* ActivateAccount.css */
+.activation-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .activation-container h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .activation-container p {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+  }
+  
+  .activation-container button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .activation-container button:hover {
+    background-color: #2980b9;
+  }
+
+  .alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }

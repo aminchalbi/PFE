@@ -1,0 +1,280 @@
+/* Import typographie manuscrite */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Background salon de thé */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #f5eee6, #fffaf3);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Form box */
+.login-box {
+  width: 400px;
+  padding: 40px;
+  background: #fffaf3;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(139, 94, 60, 0.2);
+  text-align: center;
+  animation: slideIn 0.8s ease-in-out;
+  position: relative;
+}
+
+/* Titre manuscrit */
+.login-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  color: #8b5e3c;
+  margin-bottom: 25px;
+}
+
+/* Logo café */
+.login-logo {
+  width: 120px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 2px #8b5e3c);
+}
+
+/* Input champs */
+.login-input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #d2b48c;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.login-input:focus {
+  border-color: #c69c6d;
+  box-shadow: 0 0 8px rgba(198, 156, 109, 0.4);
+  transform: scale(1.02);
+  outline: none;
+}
+
+.login-input::placeholder {
+  transition: opacity 0.3s ease;
+}
+
+.login-input:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* Password eye animation */
+.password-wrapper {
+  position: relative;
+}
+
+.password-eye {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #8b5e3c;
+  transition: transform 0.3s ease;
+}
+
+.password-eye.closed {
+  transform: rotate(180deg);
+}
+
+/* Bouton */
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.login-button:hover {
+  background: #6e4328;
+  transform: scale(1.03);
+}
+
+/* Erreur */
+.login-error {
+  color: #b00020;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Apparition animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Container global */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5eee6, #fffaf3);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Titre en pleine largeur */
+.login-header-full {
+  width: 100%;
+  background-color: #f0e6db;
+  padding: 30px 0;
+  text-align: center;
+  border-bottom: 2px solid #d6c2b2;
+}
+
+.login-title-main-large {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  color: #8b5e3c;
+  margin: 0;
+}
+
+/* Contenu central */
+.login-content {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Boîte de connexion */
+.login-box {
+  width: 100%;
+  max-width: 460px;
+  background: #fffaf3;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(139, 94, 60, 0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.login-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  color: #8b5e3c;
+  margin-bottom: 25px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #d2b48c;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-input:focus {
+  border-color: #c69c6d;
+  box-shadow: 0 0 8px rgba(198, 156, 109, 0.4);
+  transform: scale(1.02);
+  outline: none;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-eye {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #8b5e3c;
+  transition: transform 0.3s ease;
+}
+
+.password-eye.closed {
+  transform: rotate(180deg);
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+  background: #6e4328;
+  transform: scale(1.03);
+}
+
+.login-error {
+  color: #b00020;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Zone de conseil */
+.login-tip {
+  margin-top: 30px;
+  background-color: #fcf6ed;
+  padding: 20px;
+  border-left: 5px solid #d6aa82;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(139, 94, 60, 0.1);
+}
+
+.tip-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #8b5e3c;
+  margin-bottom: 8px;
+}
+
+.tip-text {
+  font-size: 15px;
+  color: #5e4b3c;
+  line-height: 1.6;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
