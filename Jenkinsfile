@@ -33,7 +33,7 @@ pipeline {
                 dir('khiwaweb') {
                     bat 'npm run build'
                 }
-                dir('khwagerant') {
+                dir('khiwagerant') {
                     bat 'npm run build'
                 }
                 dir('khiwacmp') {
@@ -63,7 +63,7 @@ pipeline {
 
         stage('Installer Backend') {
             steps {
-                dir('backend') {
+                dir('khiwabackend') {
                     bat 'npm install'
                 }
             }
