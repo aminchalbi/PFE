@@ -6,11 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Cloner depuis GitHub') {
-            steps {
-                git 'https://github.com/aminchalbi/PFE.git'
-            }
-        }
+      
 
         stage('Installer dépendances React') {
             steps {
