@@ -28,30 +28,19 @@ pipeline {
             }
         }
 
-  stage('Builder React') {
-    steps {
-        dir('khiwaweb') {
-            bat '''
-              set CI=false
-              npm run build
-            '''
+        stage('Builder React') {
+            steps {
+                dir('khiwaweb') {
+                    bat 'npm run build'
+                }
+                dir('khiwagerant') {
+                    bat 'npm run build'
+                }
+                dir('khiwacmp') {
+                    bat 'npm run build'
+                }
+            }
         }
-        dir('khiwagerant') {
-            bat '''
-              set CI=false
-              npm run build
-            '''
-        }
-        dir('khiwacmp') {
-            bat '''
-              set CI=false
-              npm run build
-            '''
-        }
-    }
-}
-
-
 
         stage('Builder Flutter') {
             steps {
@@ -80,13 +69,26 @@ pipeline {
             }
         }
 
-        stage('Lancer le backend') {
-            steps {
-                dir('backend') {
-                    bat 'pm2 start server.js --name khiwabackend || true'
+    stage('Lancer le backend') {
+    steps {
+        dir('backend') {
+            script {
+                try {
+                    // Essaye pm2 global
+                    bat 'pm2 start server.js --name khiwabackend'
+                } catch (err) {
+                    echo "pm2 global non trouvé, tentative avec npx pm2"
+                    try {
+                        bat 'npx pm2 start server.js --name khiwabackend'
+                    } catch (err2) {
+                        error "Erreur lancement backend avec pm2 : ${err2}"
+                    }
                 }
             }
         }
+    }
+}
+
 
         stage('Fin') {
             steps {
