@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Cloner depuis GitHub') {
             steps {
-                git 'git 'https://github.com/aminchalbi/PFE.git'
-'
+                git 'https://github.com/aminchalbi/PFE.git'
             }
         }
 
