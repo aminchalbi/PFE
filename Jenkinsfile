@@ -31,13 +31,13 @@ pipeline {
         stage('Builder React') {
             steps {
                 dir('khiwaweb') {
-                    bat 'npm run build'
+                    bat 'set CI=false && npm run build'
                 }
                 dir('khiwagerant') {
-                    bat 'npm run build'
+                    bat 'set CI=false && npm run build'
                 }
                 dir('khiwacmp') {
-                    bat 'npm run build'
+                    bat 'set CI=false && npm run build'
                 }
             }
         }
@@ -56,6 +56,7 @@ pipeline {
                         }
                     } catch (e) {
                         echo "Erreur Flutter : ${e}"
+                        error("Build Flutter échouée")
                     }
                 }
             }
@@ -69,26 +70,24 @@ pipeline {
             }
         }
 
-    stage('Lancer le backend') {
-    steps {
-        dir('backend') {
-            script {
-                try {
-                    // Essaye pm2 global
-                    bat 'pm2 start server.js --name khiwabackend'
-                } catch (err) {
-                    echo "pm2 global non trouvé, tentative avec npx pm2"
-                    try {
-                        bat 'npx pm2 start server.js --name khiwabackend'
-                    } catch (err2) {
-                        error "Erreur lancement backend avec pm2 : ${err2}"
+        stage('Lancer le backend') {
+            steps {
+                dir('backend') {
+                    script {
+                        try {
+                            bat 'pm2 start server.js --name khiwabackend'
+                        } catch (err) {
+                            echo "pm2 global non trouvé, tentative avec npx pm2"
+                            try {
+                                bat 'npx pm2 start server.js --name khiwabackend'
+                            } catch (err2) {
+                                error "Erreur lancement backend avec pm2 : ${err2}"
+                            }
+                        }
                     }
                 }
             }
         }
-    }
-}
-
 
         stage('Fin') {
             steps {
