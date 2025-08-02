@@ -28,19 +28,29 @@ pipeline {
             }
         }
 
-    stage('Builder React') {
+  stage('Builder React') {
     steps {
         dir('khiwaweb') {
-            bat 'set CI=false && npm run build'
+            bat '''
+              set CI=false
+              npm run build
+            '''
         }
         dir('khiwagerant') {
-            bat 'set CI=false && npm run build'
+            bat '''
+              set CI=false
+              npm run build
+            '''
         }
         dir('khiwacmp') {
-            bat 'set CI=false && npm run build'
+            bat '''
+              set CI=false
+              npm run build
+            '''
         }
     }
 }
+
 
 
         stage('Builder Flutter') {
