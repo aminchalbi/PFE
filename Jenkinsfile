@@ -6,18 +6,17 @@ pipeline {
     }
 
     stages {
-      
 
         stage('Installer dépendances React') {
             steps {
                 dir('khiwaweb') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
                 dir('khiwagerant') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
                 dir('khiwacmp') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -25,13 +24,13 @@ pipeline {
         stage('Build React apps') {
             steps {
                 dir('khiwaweb') {
-                    sh 'npm run build'
+                    bat 'npm run build'
                 }
                 dir('khiwagerant') {
-                    sh 'npm run build'
+                    bat 'npm run build'
                 }
                 dir('khiwacmp') {
-                    sh 'npm run build'
+                    bat 'npm run build'
                 }
             }
         }
@@ -39,21 +38,21 @@ pipeline {
         stage('Build Flutter apps') {
             steps {
                 dir('comptoiristeflutter') {
-                    sh 'flutter pub get'
-                    sh 'flutter build apk'
+                    bat 'flutter pub get'
+                    bat 'flutter build apk'
                 }
                 dir('khiwaclient1') {
-                    sh 'flutter pub get'
-                    sh 'flutter build apk'
+                    bat 'flutter pub get'
+                    bat 'flutter build apk'
                 }
             }
         }
 
         stage('Backend Node.js') {
             steps {
-                dir('backend') { // adapte le nom si nécessaire
-                    sh 'npm install'
-                    sh 'node server.js &'
+                dir('backend') {
+                    bat 'npm install'
+                    bat 'start /B node server.js'
                 }
             }
         }
