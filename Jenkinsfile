@@ -17,13 +17,13 @@ pipeline {
         stage('Installer les dépendances React') {
             steps {
                 dir('khiwaweb') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
                 dir('khwagerant') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
                 dir('khiwacmp') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -31,13 +31,13 @@ pipeline {
         stage('Builder React') {
             steps {
                 dir('khiwaweb') {
-                    sh 'npm run build'
+                    bat 'npm run build'
                 }
                 dir('khwagerant') {
-                    sh 'npm run build'
+                    bat 'npm run build'
                 }
                 dir('khiwacmp') {
-                    sh 'npm run build'
+                    bat 'npm run build'
                 }
             }
         }
@@ -47,12 +47,12 @@ pipeline {
                 script {
                     try {
                         dir('khiwaclient1') {
-                            sh 'flutter pub get'
-                            sh 'flutter build apk'
+                            bat 'flutter pub get'
+                            bat 'flutter build apk'
                         }
                         dir('comptoiristeflutter') {
-                            sh 'flutter pub get'
-                            sh 'flutter build apk'
+                            bat 'flutter pub get'
+                            bat 'flutter build apk'
                         }
                     } catch (e) {
                         echo "Erreur Flutter : ${e}"
@@ -64,7 +64,7 @@ pipeline {
         stage('Installer Backend') {
             steps {
                 dir('backend') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -72,7 +72,7 @@ pipeline {
         stage('Lancer le backend') {
             steps {
                 dir('backend') {
-                    sh 'pm2 start server.js --name khiwabackend || true'
+                    bat 'pm2 start server.js --name khiwabackend || true'
                 }
             }
         }
