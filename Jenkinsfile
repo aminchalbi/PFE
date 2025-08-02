@@ -19,7 +19,7 @@ pipeline {
                 dir('khiwaweb') {
                     bat 'npm install'
                 }
-                dir('khwagerant') {
+                dir('khiwagerant') {
                     bat 'npm install'
                 }
                 dir('khiwacmp') {
